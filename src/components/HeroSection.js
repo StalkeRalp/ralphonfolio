@@ -115,7 +115,7 @@ export default function HeroSection() {
         </p>
 
         {/* CTAs */}
-        <div className="reveal reveal-delay-3" style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+        <div className="reveal reveal-delay-3 hero-cta-group" style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
           <a href="#projects" className="btn btn-primary">
             <span>Voir mes projets</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -131,7 +131,7 @@ export default function HeroSection() {
         </div>
 
         {/* Stats row */}
-        <div className="reveal reveal-delay-4" style={{
+        <div className="reveal reveal-delay-4 hero-stats" style={{
           display: 'flex',
           gap: 'clamp(24px, 4vw, 60px)',
           justifyContent: 'center',
@@ -191,6 +191,19 @@ export default function HeroSection() {
         @keyframes scrollDot {
           0%{transform:translateY(0);opacity:1}
           100%{transform:translateY(12px);opacity:0}
+        }
+
+        @media (max-width: 768px) {
+          #hero {
+            padding-top: calc(var(--nav-h) + 24px) !important;
+            padding-left: 14px !important;
+            padding-right: 14px !important;
+          }
+
+          #hero .container {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+          }
         }
       `}</style>
     </section>

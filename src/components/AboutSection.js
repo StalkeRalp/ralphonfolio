@@ -117,6 +117,29 @@ export default function AboutSection() {
 
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .about-grid {
+            grid-template-columns: 1fr !important;
+          }
+
+          .about-grid > div:first-child {
+            max-width: 440px;
+            margin: 0 auto;
+          }
+        }
+
+        @media (max-width: 560px) {
+          #about .headline-lg {
+            line-height: 1.1 !important;
+          }
+
+          #about .headline-lg .text-gradient {
+            white-space: normal !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

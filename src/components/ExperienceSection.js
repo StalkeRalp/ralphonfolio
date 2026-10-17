@@ -148,6 +148,23 @@ export default function ExperienceSection() {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          #experience .glass-card {
+            padding: 20px 18px !important;
+          }
+
+          #experience .glass-card > div:first-child {
+            flex-direction: column;
+            align-items: flex-start !important;
+          }
+
+          #experience .glass-card > div:first-child > div:last-child {
+            white-space: normal;
+          }
+        }
+      `}</style>
     </section>
   );
 }

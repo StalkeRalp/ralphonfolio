@@ -175,7 +175,7 @@ export default function ProjectsSection() {
         <div className="label reveal" style={{ marginBottom: 16 }}>03 / Projets &amp; Réalisations</div>
         <div className="divider reveal" />
         
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 24 }}>
+        <div className="project-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 24 }}>
           <div>
             <h2 className="headline-lg reveal">
               Mes <span className="text-gradient">Missions &amp; Projets</span>
@@ -186,7 +186,7 @@ export default function ProjectsSection() {
           </div>
 
           {/* Category Filters */}
-          <div className="reveal reveal-delay-1" style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+          <div className="reveal reveal-delay-1 project-filter-group" style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {allCategories.map((c) => (
               <button
                 key={c}
@@ -492,6 +492,27 @@ export default function ProjectsSection() {
         @keyframes modalFadeIn {
           from { opacity: 0; transform: scale(0.95) translateY(10px); }
           to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+          .project-header {
+            flex-direction: column !important;
+            align-items: stretch !important;
+          }
+
+          .project-filter-group {
+            width: 100%;
+          }
+
+          .project-filter-group button {
+            flex: 1 1 calc(50% - 8px);
+            min-width: 0;
+          }
+
+          .book-card-3d {
+            width: 260px;
+            height: 330px;
+          }
         }
       `}</style>
     </section>

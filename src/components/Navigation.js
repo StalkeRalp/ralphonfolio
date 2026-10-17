@@ -92,7 +92,7 @@ export default function Navigation() {
         <button
           aria-label="Menu"
           onClick={() => setMenuOpen(o => !o)}
-          style={{ display:'none', flexDirection:'column', gap:5, padding:8, marginLeft:12 }}
+          style={{ display:'none', flexDirection:'column', gap:5, padding:8, marginLeft:12, alignItems:'center', justifyContent:'center' }}
           className="hamburger"
         >
           {[0,1,2].map(i => (
@@ -115,6 +115,7 @@ export default function Navigation() {
         display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:8,
         transform: menuOpen ? 'translateX(0)' : 'translateX(100%)',
         transition:'transform 0.4s var(--ease-out)',
+        pointerEvents: menuOpen ? 'auto' : 'none',
       }}>
         {links.map(l => (
           <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)} style={{
@@ -135,6 +136,16 @@ export default function Navigation() {
           .nav-links { display: none !important; }
           .hamburger { display: flex !important; }
           nav > a[href="#contact"].btn { display: none; }
+          nav {
+            padding-left: 16px !important;
+            padding-right: 14px !important;
+          }
+          nav > a:first-child {
+            max-width: calc(100% - 52px);
+          }
+          nav > a:first-child span:last-child {
+            font-size: 11px !important;
+          }
         }
       `}</style>
     </>

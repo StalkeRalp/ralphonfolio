@@ -32,7 +32,7 @@ export default function Footer() {
         © {year} Nkada Ralphon Justin — Conçu avec ❤️ &amp; ☕ depuis le Cameroun
       </p>
 
-      <div style={{ display:'flex', gap:20 }}>
+      <div style={{ display:'flex', gap:20, flexWrap:'wrap', justifyContent:'center' }}>
         {['#hero','#about','#projects','#contact'].map(h => (
           <a key={h} href={h} style={{
             fontSize:12,
@@ -44,6 +44,23 @@ export default function Footer() {
           >{h.replace('#','').charAt(0).toUpperCase()+h.slice(2)}</a>
         ))}
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          footer {
+            flex-direction: column !important;
+            text-align: center;
+            padding-top: 28px !important;
+            padding-bottom: 28px !important;
+          }
+
+          footer > div:first-child,
+          footer > div:last-child {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+      `}</style>
     </footer>
   );
 }
